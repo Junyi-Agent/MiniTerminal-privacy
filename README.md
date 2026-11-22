@@ -14,9 +14,9 @@ MiniTerminal is an SSH and Mosh terminal for iPhone and iPad. The developer runs
 
 **iCloud (optional, off by default).** If you turn on iCloud Sync, hosts, identities without their secrets, snippets, known hosts and some settings are stored in your private iCloud database. If you also turn on Sync Passwords and Keys, passwords and keys are stored in iCloud Keychain. Apple stores this data under your Apple Account. The developer cannot read it.
 
-**Agent (optional).** The Agent only works with an Anthropic API key that you enter. When you use it, your messages and the information the agent reads to answer you are sent to Anthropic's API (api.anthropic.com) under your key. That information can include terminal text, host names and settings. Anthropic's privacy policy applies to that data: <https://www.anthropic.com/legal/privacy>. Passwords and private keys are never sent.
+**Agent (optional).** The Agent only works with an Anthropic API key that you enter. When you use it, your messages and the information the agent reads to answer you are sent to Anthropic's API (api.anthropic.com) under your key. That information can include terminal text, host names, settings and the event log without its locations. Anthropic's privacy policy applies to that data: <https://www.anthropic.com/legal/privacy>. Passwords and private keys are never sent.
 
-**Location.** If you turn on Keep Connected in Background, the app runs location updates so iOS keeps it running and your session stays connected. Locations are discarded right away. They are not stored, logged or sent anywhere.
+**Location.** If you turn on Log Location While Connected, the app records your location in its event log while a session is connected: once when the session starts, and again each time you move more than 500 m. Locations are rounded to about 100 m. The event log stays on your device and leaves it only if you share it yourself. Locations are never sent to the Agent, to iCloud or to any server.
 
 **Camera.** The camera is used only to scan the QR code of a one-time code you add. Images are not stored or sent.
 
@@ -38,9 +38,9 @@ MiniTerminal 是 iPhone 和 iPad 上的 SSH 和 Mosh 终端。开发者不运营
 
 **iCloud（可选，默认关闭）。** 打开 iCloud 同步后，主机、不含秘密的身份信息、命令片段、已知主机和部分设置会存进你的 iCloud 私有数据库。如果同时打开「同步密码和私钥」，密码和私钥会存进 iCloud 钥匙串。这些数据由 Apple 存在你的 Apple 账户下，开发者无法读取。
 
-**Agent（可选）。** Agent 只有在你填入自己的 Anthropic API key 后才能用。使用时，你的消息和 agent 为回答你而读取的信息会用你的 key 发送到 Anthropic 的 API（api.anthropic.com）。这些信息可能包括终端里的文字、主机名和设置。这部分数据适用 Anthropic 的隐私政策：<https://www.anthropic.com/legal/privacy>。密码和私钥不会被发送。
+**Agent（可选）。** Agent 只有在你填入自己的 Anthropic API key 后才能用。使用时，你的消息和 agent 为回答你而读取的信息会用你的 key 发送到 Anthropic 的 API（api.anthropic.com）。这些信息可能包括终端里的文字、主机名、设置，以及去掉了位置的事件日志。这部分数据适用 Anthropic 的隐私政策：<https://www.anthropic.com/legal/privacy>。密码和私钥不会被发送。
 
-**位置。** 打开「后台保持连接」后，App 会接收位置更新，让 iOS 保持 App 运行，会话就不会断开。收到的位置会立即丢弃，不保存、不写日志、不发送到任何地方。
+**位置。** 打开「连接时记录位置」后，会话连接期间 App 会把你的位置记进事件日志：会话开始时记一次，之后每移动 500 米以上再记一次。位置精确到约 100 米。事件日志保存在你的设备上，只有你自己分享时才会离开设备。位置不会发给 Agent、iCloud 或任何服务器。
 
 **相机。** 相机只用来扫描你添加的一次性验证码的二维码。拍到的图像不保存也不发送。
 
